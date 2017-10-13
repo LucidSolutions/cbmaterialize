@@ -2,7 +2,7 @@
     "name":"Responsive Theme - Materialize CSS",
     "version":"1.0",
     "author":"Lucid Outsourcing Solutions",
-    "location":"https://github.com/kishorekvaishnav/cbmaterialize/archive/master.zip",
+    "location":"https://github.com/LucidSolutions/cbmaterialize/archive/master.zip",
     "directory":"",
     "createPackageDirectory":true,
     "packageDirectory":"",
@@ -10,7 +10,7 @@
     "documentation":"",
     "repository":{
         "type":"git",
-        "URL":"https://github.com/kishorekvaishnav/cbmaterialize/"
+        "URL":"https://github.com/LucidSolutions/cbmaterialize/"
     },
     "bugs":"",
     "slug":"cbmaterialize",
