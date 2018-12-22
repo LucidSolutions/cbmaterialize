@@ -38,28 +38,28 @@
 <base href="#cb.siteBaseURL()#" />
 <cfif cb.isEntryView()>
 
-<!-- Social: Google+ / Schema.org  -->
-<link rel="author" href="https://plus.google.com/+NicholasCerminaraV/">
-<link rel="publisher" href="https://plus.google.com/+ScotchIo/">
-<meta itemprop="name" content="#cb.getCurrentEntry().getTitle()#">
-<meta itemprop="description" content="#cb.getCurrentEntry().getHTMLDescription()#">
-<meta itemprop="image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#">
+	<!-- Social: Google+ / Schema.org  -->
+	<link rel="author" href="https://plus.google.com/+NicholasCerminaraV/">
+	<link rel="publisher" href="https://plus.google.com/+ScotchIo/">
+	<meta itemprop="name" content="#cb.getCurrentEntry().getTitle()#">
+	<meta itemprop="description" content="#cb.getCurrentEntry().getHTMLDescription()#">
+	<meta itemprop="image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#">
 
 
 
-<!-- for Facebook -->          
-<meta property="og:title" content="#cb.getCurrentEntry().getTitle()#" />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#" />
-<meta property="og:url" content="#cb.linkEntry(cb.getCurrentEntry())#" />
-<meta property="og:description" content="#cb.getCurrentEntry().getExcerpt()#" />
-<meta property="og:site_name" content="Airshock" />
+	<!-- for Facebook -->          
+	<meta property="og:title" content="#cb.getCurrentEntry().getTitle()#" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#" />
+	<meta property="og:url" content="#cb.linkEntry(cb.getCurrentEntry())#" />
+	<meta property="og:description" content="#cb.getCurrentEntry().getExcerpt()#" />
+	<meta property="og:site_name" content="Airshock" />
 
-<!-- for Twitter -->          
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="#cb.getCurrentEntry().getTitle()#" />
-<meta name="twitter:description" content="#cb.getCurrentEntry().getHTMLDescription()#" />
-<meta name="twitter:image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#" />
+	<!-- for Twitter -->          
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="#cb.getCurrentEntry().getTitle()#" />
+	<meta name="twitter:description" content="#cb.getCurrentEntry().getHTMLDescription()#" />
+	<meta name="twitter:image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#" />
 
 </cfif>    
 

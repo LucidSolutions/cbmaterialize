@@ -1,7 +1,9 @@
 ﻿<cfoutput>
 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
         <div class="mdl-card__media">
-            <img class="article-image" src="#entry.getfeaturedImageURL()#" border="0" alt="#entry.getTitle()#">
+            <cfif entry.getFeaturedImageURL() NEQ ''>
+                <img class="article-image" src="#entry.getfeaturedImageURL()#" border="0" alt="#entry.getTitle()#">
+            </cfif>
         </div>
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text"><!---<a href="#cb.linkEntry(entry)#" title="#entry.getTitle()#"></a>--->#entry.getTitle()#</h2>
