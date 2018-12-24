@@ -1,6 +1,6 @@
 {
     "name":"Responsive Theme - Materialize CSS",
-    "version":"1.0",
+    "version":"2.0",
     "author":"Lucid Outsourcing Solutions",
     "location":"https://github.com/LucidSolutions/cbmaterialize/archive/master.zip",
     "directory":"",
@@ -19,9 +19,7 @@
     "instructions":"",
     "changelog":"",
     "type":"contentbox-themes",
-    "keywords":[
-        
-    ],
+    "keywords":[],
     "private":false,
     "engines":[
         {
@@ -38,21 +36,11 @@
             "URL":"http://www.apache.org/licenses/LICENSE-2.0"
         }
     ],
-    "contributors":[
-        
-    ],
-    "dependencies":{
-        
-    },
-    "devDependencies":{
-        
-    },
-    "installPaths":{
-        
-    },
-    "scripts":{
-        
-    },
+    "contributors":[],
+    "dependencies":{},
+    "devDependencies":{},
+    "installPaths":{},
+    "scripts":{},
     "ignore":[
         "**/.*",
         "test",
@@ -64,9 +52,7 @@
                 "default":""
             }
         ],
-        "labels":[
-            
-        ],
+        "labels":[],
         "reporter":"",
         "reporterResults":"",
         "bundles":[
@@ -76,13 +62,9 @@
             "mapping":"",
             "recurse":true
         },
-        "watchers":[
-            
-        ],
+        "watchers":[],
         "notify":{
-            "emails":[
-                
-            ],
+            "emails":[],
             "growl":"",
             "URL":""
         }

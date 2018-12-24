@@ -63,7 +63,7 @@ component{
 	// Layout Variables
     this.name       	= "Responsive Theme - Materialize CSS";
 	this.description 	= "Responsive Blog Theme - Materialize CSS";
-	this.version		= "1.1.0";
+	this.version		= "2.0";
 	this.author 		= "Lucid Outsourcing Solutions";
 	this.authorURL		= "http://lucidsolutions.in/";
 	// Screenshot URL, can be absolute or locally in your layout package.
