@@ -28,7 +28,7 @@ component extends="contentbox.models.ui.BaseWidget" singleton{
 		var commentForm = "";
 		
 		// captcha?
-		if( cbSettings.cb_comments_captcha ){
+		if( structKeyExists(cbSettings, 'cb_comments_captcha') AND len(cbSettings.cb_comments_captcha) GT 0 ){
 			saveContent variable="captcha"{
 				writeOutput("
 					<p><img src='#event.buildLink( event.getValue( 'cbEntryPoint', '', true) & '__captcha')#'></p>
@@ -47,7 +47,7 @@ component extends="contentbox.models.ui.BaseWidget" singleton{
 
 				#cb.event( "cbui_preCommentForm" )#
 				
-				#getModel( "messagebox@cbMessagebox" ).renderIt()#
+				#getInstance( "messagebox@cbMessagebox" ).renderIt()#
 				
 
 				#html.hiddenField( name="contentID", value=arguments.content.getContentID() )#

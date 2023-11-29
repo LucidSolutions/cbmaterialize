@@ -36,10 +36,13 @@
       <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text no-padding">
           #prc.entry.renderContent()#
       </div>                  
-        <div class="mdl-cell mdl-cell--12-col portfolio-contact">
-            <h2 class="mdl-card__title-text">leave a comment</h2>
-            #cb.quickCommentForm(prc.entry)#  
-        </div>
+	
+	<cfif !args.print>
+	        <div class="mdl-cell mdl-cell--12-col portfolio-contact">
+	            <h2 class="mdl-card__title-text">leave a comment</h2>
+	            #cb.quickCommentForm(prc.entry)#  
+	        </div>
+	</cfif>	
     </div>      
   </div>
   <cfif cb.quickComments() NEQ "">

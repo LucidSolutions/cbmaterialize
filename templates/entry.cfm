@@ -2,15 +2,17 @@
 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
         <div class="mdl-card__media">
             <cfif entry.getFeaturedImageURL() NEQ ''>
-                <img class="article-image" src="#entry.getfeaturedImageURL()#" border="0" alt="#entry.getTitle()#">
+                <a href="#cb.linkEntry(entry)#" title="#entry.getTitle()#">
+		<img class="article-image" src="#entry.getfeaturedImageURL()#" border="0" alt="#entry.getTitle()#">
+		</a>
             </cfif>
         </div>
         <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text"><!---<a href="#cb.linkEntry(entry)#" title="#entry.getTitle()#"></a>--->#entry.getTitle()#</h2>
+            <h2 class="mdl-card__title-text"><a href="#cb.linkEntry(entry)#" style="text-decoration: none;" title="#entry.getTitle()#">#entry.getTitle()#</a></h2>
         </div>
         <div class="mdl-card__supporting-text" style="height: 100px;">
 			<cfif entry.hasExcerpt()>
-            	<cfset RealText = entry.getExcerpt()>
+            	<cfset RealText = entry.renderExcerpt()>
             <cfelse>
             	<cfset RealText = entry.renderContent()>
             </cfif>

@@ -2,11 +2,15 @@
 <cfoutput>
 <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
     <div class="mdl-layout__header-row">
-        <span class="mdl-layout__title">#cb.siteName()#</span>
+        <cfif cb.themeSetting( 'headerLogo' ) is "">
+            <a href="#cb.linkHome()#">#cb.siteName()#</a>
+        <cfelse>
+            <a href="#cb.linkHome()#"><img src="#cb.themeSetting( 'headerLogo' )#" class="img-responsive" alt="#cb.siteName()#" class="img-responsive" /></a>
+        </cfif>
     </div>
     <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
         <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-            <cfif ( !prc.cbSettings.cb_site_disable_blog )>
+            <cfif (!structKeyExists(prc.cbSettings, "cb_site_disable_blog"))>
                 <cfif cb.isBlogView()> <a class="mdl-navigation__link is-active" href="#cb.linkBlog()#"><cfelse><a class="mdl-navigation__link" href="#cb.linkBlog()#"></cfif>
                     Blog</a>
             </cfif>
@@ -38,13 +42,13 @@
 </header>
 <div class="mdl-layout__drawer mdl-layout--small-screen-only">
     <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-            <cfif ( !prc.cbSettings.cb_site_disable_blog )>
+            <cfif ( prc.oCurrentSite.getIsBlogEnabled() )>
                 <cfif cb.isBlogView()> <a class="mdl-navigation__link is-active" href="#cb.linkBlog()#"><cfelse><a class="mdl-navigation__link" href="#cb.linkBlog()#"></cfif>
                     Blog</a>
             </cfif>
             <cfset menuData = cb.rootMenu( type="data", levels="2" )>
             <cfset count=1/>
-            <cfloop array="#menuData#" index="menuItem" step = "1">
+            <cfloop array="#menuData#" index="menuItem">
                 <cfif structKeyExists( menuItem, "subPageMenu" )>
                     <div class="dropdown">
                         <cfif cb.isPageView() AND event.buildLink( cb.getCurrentPage().getSlug() ) eq menuItem.link>

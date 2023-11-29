@@ -1,14 +1,14 @@
 ﻿<cfoutput>
 <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
         <div class="mdl-card__media">
-            <img class="article-image" src="#relatedContent.getfeaturedImageURL()#" border="0" alt="#relatedContent.getTitle()#">
+            <a href="#cb.linkEntry(entry)#" title="#entry.getTitle()#"><img class="article-image" src="#relatedContent.getfeaturedImageURL()#" border="0" alt="#relatedContent.getTitle()#"></a>
         </div>
         <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text"><!---<a href="#cb.linkEntry(entry)#" title="#entry.getTitle()#"></a>--->#relatedContent.getTitle()#</h2>
+            <h2 class="mdl-card__title-text"><a href="#cb.linkEntry(entry)#" title="#entry.getTitle()#">#relatedContent.getTitle()#</a></h2>
         </div>
         <div class="mdl-card__supporting-text" style="height: 100px;">
 			<cfif relatedContent.hasExcerpt()>
-            	<cfset RealText = relatedContent.getExcerpt()>
+            	<cfset RealText = relatedContent.renderExcerpt()>
             <cfelse>
             	<cfset RealText = relatedContent.renderContent()>
             </cfif>
@@ -31,7 +31,7 @@
     <img src="#relatedContent.getfeaturedImageURL()#" alt="#relatedContent.getTitle()#" class="img-responsive">
     	<h3>#relatedContent.getTitle()#</h3>
 		<cfif relatedContent.hasExcerpt()>
-           <cfset RealText = relatedContent.getExcerpt()>
+           <cfset RealText = relatedContent.renderExcerpt()>
         <cfelse>
            <cfset RealText = relatedContent.renderContent()>
         </cfif>

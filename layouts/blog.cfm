@@ -1,7 +1,10 @@
 <cfoutput>
+<!--- Global Layout Arguments --->
+<cfparam name="args.print" 		default="false">
+<cfparam name="args.sidebar" 	default="true">
 <!DOCTYPE html>
 <html lang="en">
-<head prefix="og: http://ogp.me/ns## fb: http://ogp.me/ns/fb## article: http://ogp.me/ns/article##">
+<head>
 	<!--- Page Includes --->
 	#cb.quickView( "_blogIncludes" )#
 
@@ -15,7 +18,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 	
 	<!--- Header --->
-	#cb.quickView( view='_header' )#
+	#cb.quickView( '_header' )#
      <main class="mdl-layout__content">
 		 <div class="mdl-grid portfolio-max-width">
         	

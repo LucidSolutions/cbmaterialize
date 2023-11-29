@@ -1,71 +1,20 @@
 <cfoutput>
-<title>
-<!--- Site Title --->	
-<cfif cb.isEntryView()>
-	#cb.getCurrentEntry().getTitle()#
-<cfelse>
-	#cb.siteName()# - #cb.siteTagLine()#
-</cfif>
-</title>
+<title>#cb.getContentTitle()#</title>
 
 <!--- ********************************************************************************* --->
 <!--- 					META TAGS														--->
 <!--- ********************************************************************************* --->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="A portfolio template that uses Material Design Lite.">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<meta charset="utf-8" /> 
 <meta name="generator" 	 	content="ContentBox powered by ColdBox" />
 <meta name="robots" 	 	content="index,follow" />
 <meta name="viewport" 		content="width=device-width, initial-scale=1">
+<meta name="description" 	content="#cb.getContentDescription()#" />
+<meta name="keywords" 	 	content="#cb.getContentKeywords()#" />
 
-
-<!--- Meta per page or index --->
-<cfif cb.isEntryView() AND len( cb.getCurrentEntry().getHTMLDescription() )>
-	<meta name="description" content="#cb.getCurrentEntry().getHTMLDescription()#" />
-<cfelse>
-	<meta name="description" content="#HTMLEditFormat( cb.siteDescription() )#" />
-</cfif>
-<cfif cb.isEntryView() AND len(cb.getCurrentEntry().getHTMLKeywords())>
-	<meta name="keywords" 	 content="#cb.getCurrentEntry().getHTMLKeywords()#" />
-<cfelse>
-	<meta name="keywords" 	 content="#cb.siteKeywords()#" />
-</cfif>
-
+#cb.getOpenGraphMeta()#
 
 <!--- Base HREF for SES enabled URLs --->
 <base href="#cb.siteBaseURL()#" />
-<cfif cb.isEntryView()>
-
-	<!-- Social: Google+ / Schema.org  -->
-	<link rel="author" href="https://plus.google.com/+NicholasCerminaraV/">
-	<link rel="publisher" href="https://plus.google.com/+ScotchIo/">
-	<meta itemprop="name" content="#cb.getCurrentEntry().getTitle()#">
-	<meta itemprop="description" content="#cb.getCurrentEntry().getHTMLDescription()#">
-	<meta itemprop="image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#">
-
-
-
-	<!-- for Facebook -->          
-	<meta property="og:title" content="#cb.getCurrentEntry().getTitle()#" />
-	<meta property="og:type" content="article" />
-	<meta property="og:image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#" />
-	<meta property="og:url" content="#cb.linkEntry(cb.getCurrentEntry())#" />
-	<meta property="og:description" content="#cb.getCurrentEntry().getExcerpt()#" />
-	<meta property="og:site_name" content="Airshock" />
-
-	<!-- for Twitter -->          
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="#cb.getCurrentEntry().getTitle()#" />
-	<meta name="twitter:description" content="#cb.getCurrentEntry().getHTMLDescription()#" />
-	<meta name="twitter:image" content="#cb.siteBaseURL()##cb.getCurrentEntry().getfeaturedImageURL()#" />
-
-</cfif>    
-
-
-
-
 
 <!--- ********************************************************************************* --->
 <!--- 					RSS DISCOVERY													--->
@@ -94,12 +43,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!-- endinjector -->
 
+<cfif len( cb.themeSetting( 'cssStyleOverrides' ) )>
+<style>
+	#cb.themeSetting( 'cssStyleOverrides' )#
+</style>	
+</cfif>
+
 <!--- ********************************************************************************* --->
 <!--- 					JAVASCRIPT														--->
 <!--- ********************************************************************************* --->
 <!-- injector:js -->
-<!---<script src="#cb.themeRoot()#/includes/js/jquery-1.11.1.min.js"></script>--->
-<script src="https://code.getmdl.io/1.1.3/material.min.js"></script><!---
-<script src="#cb.themeRoot()#/includes/js/material.min.js"></script>--->
+<script src="#cb.themeRoot()#/includes/js/jquery.min.js"></script>
+<script src="#cb.themeRoot()#/includes/js/material.min.js"></script>
 <!-- endinjector -->
 </cfoutput>

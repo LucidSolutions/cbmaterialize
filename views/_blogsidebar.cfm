@@ -38,6 +38,30 @@
             </ul>
         </div>
     </cfif>
+    <cfif cb.isEntryView()>
+	<cfif cb.themeSetting( "showEntryCommentsBlogSide", true )>
+	<!--- RSS Entry Comments --->
+	        <div class="pgs">
+	            <h3>Entry Comments</h3>
+	            <ul>
+	                <li>
+				<a
+					href="#cb.linkRSS( comments=true, entry=prc.entry )#"
+					title="Subscribe to our Entry's Comment(s) RSS Feed!"
+				>
+					<i class="fa fa-rss"></i>
+				</a>
+				<a
+					href="#cb.linkRSS(comments=true,entry=prc.entry)#"
+					title="Subscribe to our Entry's Comment(s) RSS Feed!"
+				>
+					RSS Feed
+				</a>
+			</li>
+	            </ul>
+	        </div>
+    	</cfif>
+    </cfif>	
 </div>
 <div class="clearfix"> </div>
 
@@ -49,7 +73,7 @@
 
 
 
-<!---#cb.widget("Meta",{titleLevel="4"})#--->
+
 
 <!--- ContentBoxEvent --->
 #cb.event( "cbui_afterSideBar" )#

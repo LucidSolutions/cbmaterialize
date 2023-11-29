@@ -1,10 +1,10 @@
-﻿
+﻿<cfparam name="args.sidebar" default="true">
 <cfoutput>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<!--- Page Includes --->
-	#cb.quickView( "_blogIncludes" )#
+	#cb.quickView( "_pageIncludes" )#
 
 	<!--- ContentBoxEvent --->
 	#cb.event( "cbui_beforeHeadEnd" )#

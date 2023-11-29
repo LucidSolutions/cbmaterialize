@@ -835,6 +835,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.searchLayout{
+  padding: 20px 10px;
+}
 @media screen and (max-width: 1024px){
     .dropdown {
       min-width: 200px;

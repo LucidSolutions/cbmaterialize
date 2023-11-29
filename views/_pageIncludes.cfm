@@ -1,34 +1,17 @@
 <cfoutput>
-<title>
-	<!--- Site Title --->
-	<cfif cb.isPageView()>
-		#cb.getCurrentPage().getTitle()#
-	<cfelse>
-		#cb.siteName()# - #cb.siteTagLine()#
-	</cfif>
-</title>
+<title>#cb.getContentTitle()#</title>
 
 <!--- ********************************************************************************* --->
 <!--- 					META TAGS														--->
 <!--- ********************************************************************************* --->
+<meta charset="utf-8" /> 
 <meta name="generator" 	 	content="ContentBox powered by ColdBox" />
 <meta name="robots" 	 	content="index,follow" />
 <meta name="viewport" 		content="width=device-width, initial-scale=1">
-<meta charset="utf-8" /> 
+<meta name="description" 	content="#cb.getContentDescription()#" />
+<meta name="keywords" 	 	content="#cb.getContentKeywords()#" />
 
-<!--- Meta Description By Page or By Site --->
-<cfif cb.isPageView() AND len( cb.getCurrentPage().getHTMLDescription() )>
-	<meta name="description" content="#cb.getCurrentPage().getHTMLDescription()#" />
-<cfelse>
-	<meta name="description" content="#HTMLEditFormat( cb.siteDescription() )#" />
-</cfif>
-
-<!--- Meta Keywords By Page or By Site --->
-<cfif cb.isPageView() AND len( cb.getCurrentPage().getHTMLKeywords() )>
-	<meta name="keywords" 	 content="#cb.getCurrentPage().getHTMLKeywords()#" />
-<cfelse>
-	<meta name="keywords" 	 content="#cb.siteKeywords()#" />
-</cfif>
+#cb.getOpenGraphMeta()#
 
 <!--- Base HREF for SES enabled URLs --->
 <base href="#cb.siteBaseURL()#" />
@@ -47,6 +30,11 @@
 	</cfif>
 </cfif>
 
+<!-- //for-mobile-apps -->
+<link rel="stylesheet" href="#cb.themeRoot()#/includes/css/material.css">
+<link href="#cb.themeRoot()#/includes/css/styles.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 <!--- ********************************************************************************* --->
 <!--- 					CSS 															--->
 <!--- ********************************************************************************* --->
@@ -54,16 +42,14 @@
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //for-mobile-apps -->
-<link href="#cb.themeRoot()#/includes/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="#cb.themeRoot()#/includes/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 
 <!--- ********************************************************************************* --->
 <!--- 					JAVASCRIPT														--->
 <!--- ********************************************************************************* --->
 <!-- injector:js -->
-<script src="#cb.themeRoot()#/includes/js/jquery-1.11.1.min.js"></script>
+<script src="#cb.themeRoot()#/includes/js/jquery.min.js"></script>
+<script src="#cb.themeRoot()#/includes/js/material.min.js"></script>
 <!-- endinjector -->
 
 </cfoutput>
